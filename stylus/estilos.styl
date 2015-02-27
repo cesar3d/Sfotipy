@@ -1,13 +1,29 @@
+@import "nib"
 @import "normalize.styl"
 @import "fonts.styl"
 
 gris_oscuro = #333
 gris_claro = #818181
 rojo = #bd255b
+gris_mas_claro = #f0f0f0
 
 a
 	text-decoration none
 	
+body
+	font-family 'Varela Round', sans-serif
+	font-size 16px
+	
+figure 
+	margin 0 !important
+	
+img
+	vertical-align top	
+	
+ul
+	margin 0
+	padding 0
+
 .author
 	color gris_claro
 
@@ -30,10 +46,6 @@ a
 	&.grey
 		color gris_claro	
 
-body
-	font-family 'Varela Round', sans-serif
-	font-size 16px
-	
 .button-menu
 	color gris_oscuro
 	left .5em
@@ -54,9 +66,6 @@ body
 	
 .center-text
 	text-align center	
-	
-figure 
-	margin 0 !important
 
 .header
 	height 3.5em
@@ -65,10 +74,26 @@ figure
 		font-size 1.1em
 		text-align center
 		margin 0
-		line-height 3.5em
-		
-img
-	vertical-align top		
+		line-height 3.5em	
+	
+.input
+	height 2.5em
+	border 1px solid gris_claro	
+	border-radius 5px
+	padding 0 1em 0 2em
+
+.icon-close
+	position absolute
+	right .5em
+	top .4em		
+	color gris_claro
+	font-size 1.2em
+
+.left
+	float left 
+
+.logo
+	display none
 
 .menu 
 	display none
@@ -86,6 +111,22 @@ img
 	&.small
 		width 20em	
 		
+.playlist
+	display none
+	display block
+	width 22em
+	padding 0 2em
+	border-left 1px solid gris_claro 
+	
+	.list 
+		list-style none
+		
+	.item
+		padding 1em 0
+		
+	.action 
+		font-size .8em	
+
 .progress	
 	margin 1em 0
 	position relative
@@ -115,6 +156,7 @@ img
 		width 30%	
 		border-radius 6px
 		position relative
+		animation 10s state infinite linear
 		
 	.circle
 		width 10px
@@ -124,9 +166,17 @@ img
 		position absolute
 		right 0
 		top -2px
+		animation 1s circle infinite
 
 .relative
 	position relative
+
+.right 
+	float right
+
+.round
+	border-radius 50%
+	overflow hidden
 
 .song
 	width 8rem
@@ -141,7 +191,145 @@ img
 		
 	p
 		margin .5em 0	
+		
+.search-icon
+	position absolute
+	left .5em
+	top .8em		
+	color gris_claro
 
+.user
+	width 160px
+
+.wrap 
+	width 1000px
 	
+
+@keyframes state
+	0%
+		width 0	
+	100%
+		width 100%
+
+@keyframes circle
+	0%
+		transform scale(1)
+	100%
+		transform scale(2)	
+		opacity 0
+
+
+@media screen and (min-width:480px)
+	.image
+		img
+			width 100%
+			height auto
+
+	.song
+		&:nth-child(even)
+			margin-right 1em	
+			
+	.playing
+		&.medium
+			width auto		
+
+@media screen and (min-width:1000px)
+	.avatar
+		width 38px
+		height 38px
+
+	body
+		background gris_mas_claro
+
+	.button-menu	
+		display none
+		
+	.header
+		height auto
+		border none
+
+		.title
+			display none		
+
+	.isotipo
+		width 122px
+
+	.logo
+		display block
+		padding 1.3em 0
+		background white
+		overflow hidden
+
+	.menu
+		display block
+		background gris_mas_claro
+		overflow hidden
+		border-top 1px solid gris_claro
+			
+		.item
+			float left
+			list-style none
+						
+			a
+				color gris_oscuro
+				text-transform uppercase
+				cursor pointer
+				padding 1em
+				display block
+				border-top 5px solid transparent
+				
+				&:hover
+					border-top 5px solid gris_claro
+
+	.music	
+		width 32.5em
+		float left
+		
+		.description
+			display none	
+
+	.playlist 
+		display block
+
+	.playing
+		padding-top 1.3em
+
+		&.large
+			margin 0 auto
+			width 62.5em	
+			overflow hidden
+
+	.username
+		color gris_claro
+		position relative
+		top 9px
+		margin-left .5em
+		
+		&:after
+			content ""
+			border-left 7px solid transparent
+			border-right 7px solid transparent
+			border-top 9px solid gris_claro
+			display inline-block
+			margin-left .4em
+			
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				
+
+
 
 		
